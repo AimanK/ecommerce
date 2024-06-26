@@ -2,6 +2,11 @@
 
 Welcome to the Modern Furniture E-Commerce App! This project is a complete e-commerce application for modern furniture. It features a React frontend, Java Spring Boot backend, and a MySQL database.
 
+## App Screenshots
+- <img width="1440" alt="Screenshot 2024-06-25 at 11 34 50 PM" src="https://github.com/AimanK/ecommerce/assets/22192993/5dad8103-8916-4a69-9fe7-1be2df0a4ac6">
+- <img width="1440" alt="Screenshot 2024-06-25 at 11 35 10 PM" src="https://github.com/AimanK/ecommerce/assets/22192993/fd4b6276-bee3-4582-9cda-55f90476cd03">
+- <img width="1435" alt="Screenshot 2024-06-25 at 11 34 34 PM" src="https://github.com/AimanK/ecommerce/assets/22192993/45127d09-cbe8-4e5c-927f-e8c4c2355795">
+
 ## 📋 Table of Contents
 
 - [Features](#features)
