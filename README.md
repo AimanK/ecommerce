@@ -115,9 +115,9 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For any inquiries, please contact:
 
-- **Name**: Your Name
-- **Email**: your.email@example.com
-- **LinkedIn**: [Your LinkedIn](https://www.linkedin.com/in/yourprofile)
+- **Name**: AimanK
+- **Email**: kayadcodes@gmail.com
+- **LinkedIn**: [Your LinkedIn](https://www.linkedin.com/in/aiman-kayad/)
 
 ---
 
