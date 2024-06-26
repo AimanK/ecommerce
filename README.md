@@ -53,13 +53,13 @@ Make sure you have the following installed:
 
 2. **Backend Setup**:
     ```bash
-    cd backend
+    cd ecommerce-backend
     mvn clean install
     ```
 
 3. **Frontend Setup**:
     ```bash
-    cd ../frontend
+    cd ecommerce-frontend
     npm install
     ```
 
@@ -74,13 +74,13 @@ Make sure you have the following installed:
 
 2. **Backend**:
     ```bash
-    cd backend
+    cd ecommerce-backend
     mvn spring-boot:run
     ```
 
 3. **Frontend**:
     ```bash
-    cd frontend
+    cd ecommerce-frontend
     npm start
     ```
 
