@@ -3,12 +3,9 @@ import React from 'react'
 function AboutCard() {
 
   return (
-    <div className="album py-5 bg-light">
-          <div className="container">
-            <div className="row">
-            <div class="col-md-4">
+      <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap" />
+                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="" data-holder-rendered="true" />
                 <div class="card-body">
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -20,10 +17,7 @@ function AboutCard() {
                   </div>
                 </div>
               </div>
-            </div>
-            </div>
-          </div>
-    </div>
+       </div>
   )
 }
 

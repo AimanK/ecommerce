@@ -19,9 +19,15 @@ function AboutUs() {
           </div>
         </section>
 
-        <AboutCard />
-        <AboutCard />
-        <AboutCard />
+          <div className="album py-5 bg-light">
+            <div class="container">
+              <div class="row">
+                  <AboutCard />
+                  <AboutCard />
+                  <AboutCard />
+              </div>
+            </div>
+          </div>
 
       </main>
 
