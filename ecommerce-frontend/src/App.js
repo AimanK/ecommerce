@@ -3,22 +3,21 @@ import './App.css';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 
-import Navbar from "./layout/Navbar.js"
-import Sidebar from "./layout/Sidebar.js"
+import Navbar from "./layout/Navbar.jsx"
 import CustomerHome from "./pages/CustomerHome";
 import ProductHome from "./pages/ProductHome";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AddCustomer from "./customers/AddCustomer";
 import ViewCustomer from './customers/ViewCustomer';
-import Shop from './pages/Shop.js';
-import AboutUs from './pages/AboutUs.js';
+import Shop from './pages/Shop.jsx';
+import AboutUs from './pages/AboutUs.jsx';
 import Cart from './pages/Cart.js';
-import Lighting from './productpages/Lighting.js';
-import Chairs from './productpages/Chairs.js';
-import Tables from './productpages/Tables.js';
-import Beds from './productpages/Beds.js';
-import AreaRugs from './productpages/AreaRugs.js';
-import Decor from './productpages/Decor.js';
+import Lighting from './productpages/Lighting.jsx';
+import Chairs from './productpages/Chairs.jsx';
+import Tables from './productpages/Tables.jsx';
+import Beds from './productpages/Beds.jsx';
+import AreaRugs from './productpages/AreaRugs.jsx';
+import Decor from './productpages/Decor.jsx';
 
 function App() {
   return (

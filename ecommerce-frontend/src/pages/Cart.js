@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Footer from "../layout/Footer.js";
-import CartCard from './CartCard.js';
+import Footer from "../layout/Footer.jsx";
+import CartCard from './CartCard.jsx';
 
 function Cart() {
 
