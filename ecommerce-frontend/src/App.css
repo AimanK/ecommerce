@@ -223,11 +223,18 @@ Product Image styles
   --jumbotron-padding-y: 3rem;
 }
 
+.card-image {
+  height: 225px; 
+  width: 100%; 
+  display: block;
+}
+
 .hero-background {
   background-image: url('./images/group.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
-  min-height: 100vh;
+  min-height: 65%;
   display: flex;
   flex-direction: column;
   justify-content: center;
