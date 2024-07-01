@@ -120,7 +120,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For any inquiries, please contact:
 
-- **Name**: AimanK
+- **Name**: Aiman Kayad
 - **Email**: kayadcodes@gmail.com
 - **LinkedIn**: [Your LinkedIn](https://www.linkedin.com/in/aiman-kayad/)
 
