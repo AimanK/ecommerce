@@ -18,6 +18,7 @@ import Tables from './productpages/Tables.jsx';
 import Beds from './productpages/Beds.jsx';
 import AreaRugs from './productpages/AreaRugs.jsx';
 import Decor from './productpages/Decor.jsx';
+import Profile from './pages/Profile.jsx';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route exact path="/arearugs" element={<AreaRugs />} />
           <Route exact path="/beds" element={<Beds/>} />
           <Route exact path="/decor" element={<Decor />} />
+          <Route exact path="/profile" element={<Profile />} />
       </Routes>
 
       </Router>

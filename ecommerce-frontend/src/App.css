@@ -233,7 +233,7 @@ Product Image styles
   background-image: url('./images/group.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom center;
   min-height: 65%;
   display: flex;
   flex-direction: column;
@@ -276,6 +276,74 @@ footer p {
 
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
 
+/* Assuming this is the common class for all AboutCard images */
+.about-card-image {
+  width: 100%;
+  height: auto;
+}
+
+
+/* Specific style for the third AboutCard image */
+.third-about-card .card-img-top {
+  height: 310px; /* Adjust this value as needed */
+  object-fit: cover; /* Ensure the image covers the area */
+}
+
+
+/* Profile.css */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+form {
+  width: 100%;
+  max-width: 400px; /* Adjust the max-width as needed */
+  padding: 20px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+  margin-bottom: 150px;
+}
+
+.profile-image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  width: 100px; /* Adjust the size as needed */
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.form-group {
+  margin-bottom: 20px; /* Add margin between form groups */
+}
+
+.form-check {
+  margin-bottom: 20px; /* Add margin between form check and submit button */
+}
+
+.btn {
+  margin-top: 10px; /* Add margin above the submit button */
+}
+
+.button-container {
+  display: flex;
+  gap: 10px; /* Adjust the value as needed */
+}
+
+
+
+
+
 
 /**
 
@@ -287,6 +355,8 @@ Shopping Cart page styles
   height: 100vh !important;
   }
   }
+
+
 
 
 /*
