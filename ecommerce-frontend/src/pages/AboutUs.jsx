@@ -1,8 +1,16 @@
 import React from 'react';
-import groupImage from '../images/group.jpg';
-import Footer from '../layout/Footer.jsx';
-import '../App.css'; // Import the CSS file for styles
-import AboutCard from '../layout/AboutCard.jsx'
+import { Link } from 'react-router-dom';
+import Footer from "../layout/Footer.jsx";
+import AboutCard from '../layout/AboutCard';
+import workshopImage from '../images/workshop.jpg';
+import aboutHomeImage from '../images/about-home.jpg';
+import craftsmanImage from '../images/craftsman.jpg';
+
+const about_descriptions = [
+  "Our story began as a couple of craftsmen that dreamed to create inspiring pieces, from a dust-filled barn to your living space, each piece is crafted with intense focus and love.",
+  "The best design philosophy is the simplest to us, shapes you can find in nature and colors that resonate deeply with the spirit, we aim to connect with our surroundings harmoniously.",
+  "We are skilled craftsmen who utilize industry-leading techniques to build our pieces to the highest standard so that you and your loved ones can rely on their build quality as much as their aesthetic beauty."
+];
 
 function AboutUs() {
   return (
@@ -10,27 +18,25 @@ function AboutUs() {
       <main className="hero-background">
         <section className="jumbotron text-center bg-transparent">
           <div className="container text-light">
-            <h1 className="jumbotron-heading">Album example</h1>
-            <p className="lead">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+            <h1 className="jumbotron-heading">Our Mission<br /> Crafting Contemporary Elegance</h1>
+            <p className="lead">
+              At Urban Nest, we believe that exceptional spaces are born from the perfect blend of masterful craftsmanship and cutting-edge design.
+            </p>
             <p>
-              <a href="#" className="btn btn-primary my-2">Main call to action</a>
-              <a href="#" className="btn btn-secondary my-2">Secondary action</a>
+              <Link to="/"><a href="#" className="btn btn-primary my-2">Shop our styles</a></Link>
             </p>
           </div>
         </section>
-
-          <div className="album py-5 bg-light">
-            <div class="container">
-              <div class="row">
-                  <AboutCard />
-                  <AboutCard />
-                  <AboutCard />
-              </div>
+        <div className="album py-5 bg-light">
+          <div className="container">
+            <div className="row">
+              <AboutCard image={workshopImage} description={about_descriptions[0]} />
+              <AboutCard image={aboutHomeImage} description={about_descriptions[1]} />
+              <AboutCard image={craftsmanImage} description={about_descriptions[2]} customClass="third-about-card" />
             </div>
           </div>
-
+        </div>
       </main>
-
       <Footer />
     </div>
   );

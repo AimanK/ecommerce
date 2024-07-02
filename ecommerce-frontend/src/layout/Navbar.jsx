@@ -63,6 +63,7 @@ export default function Navbar() {
 
           <Link class="py-2 d-none d-md-inline-block text-white" to="/aboutus">About Us</Link>
           <Link class="py-2 d-none d-md-inline-block text-white" to="/yourcart">Cart</Link>
+          {isAuthenticated  && <Link class="py-2 d-none d-md-inline-block text-white" to="/profile">Profile</Link>}
 
 
           {isAuthenticated ? <LogoutButton /> : <LoginButton />}
