@@ -19,31 +19,33 @@ import Beds from './productpages/Beds.jsx';
 import AreaRugs from './productpages/AreaRugs.jsx';
 import Decor from './productpages/Decor.jsx';
 import Profile from './pages/Profile.jsx';
+import SignIn from './pages/SignIn.jsx';
+import Register from './pages/Register';
+import Auth0ProviderWithNavigate from './auth/auth0-provider-with-navigate'; 
 
 function App() {
   return (
     <div className="App">
       <Router>
-      <Navbar />
-  
-
-      <Routes>
-          <Route exact path="/" element={< ProductHome />} />
-          <Route exact path="/customerhome" element={<CustomerHome />} />
-          <Route exact path="/addcustomer" element={<AddCustomer />} />
-          <Route exact path="/customer/:id" element={<ViewCustomer />} />
-          <Route exact path="/shop" element={<Shop />} />
-          <Route exact path="/aboutus" element={<AboutUs />} />
-          <Route exact path="/yourcart" element={<Cart />} />
-          <Route exact path="/lighting" element={<Lighting />} />
-          <Route exact path="/chairs" element={<Chairs />} />
-          <Route exact path="/tables" element={<Tables />} />
-          <Route exact path="/arearugs" element={<AreaRugs />} />
-          <Route exact path="/beds" element={<Beds/>} />
-          <Route exact path="/decor" element={<Decor />} />
-          <Route exact path="/profile" element={<Profile />} />
-      </Routes>
-
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<ProductHome />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/sign-in" element={<SignIn />} />
+            <Route path="/newcustomer" element={<Register />} />
+            <Route path="/customerhome" element={<CustomerHome />} />
+            <Route path="/addcustomer" element={<AddCustomer />} />
+            <Route path="/customer/:id" element={<ViewCustomer />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/yourcart" element={<Cart />} />
+            <Route path="/lighting" element={<Lighting />} />
+            <Route path="/chairs" element={<Chairs />} />
+            <Route path="/tables" element={<Tables />} />
+            <Route path="/arearugs" element={<AreaRugs />} />
+            <Route path="/beds" element={<Beds />} />
+            <Route path="/decor" element={<Decor />} />
+          </Routes>
       </Router>
     </div>
   );

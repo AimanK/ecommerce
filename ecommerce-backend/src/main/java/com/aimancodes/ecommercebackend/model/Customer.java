@@ -12,8 +12,9 @@ public class Customer {
     @GeneratedValue
     private Long id;
     private String username;
-    private String name;
+    private String bio;
     private String email;
+    private String password;
     
     public Long getId() {
         return id;
@@ -34,14 +35,14 @@ public class Customer {
         this.username = username;
     }
     
-    public String getName()
+    public String getBio()
     {
-        return name;
+        return bio;
     }
     
-    public void setName(String name)
+    public void setName(String bio)
     {
-        this.name = name;
+        this.bio = bio;
     }
     
     public String getEmail()
@@ -52,5 +53,15 @@ public class Customer {
     public void setEmail(String email)
     {
         this.email = email;
+    }
+
+    public String getPassword()
+    {
+        return password;
+    }
+
+    public void setPassword(String password)
+    {
+        this.password = password;
     }
 }
