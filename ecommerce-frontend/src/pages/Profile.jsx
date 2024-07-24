@@ -1,27 +1,46 @@
-import { useAuth0 } from "@auth0/auth0-react";
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import '../App.css'; // Import the CSS file
 
 const Profile = () => {
-  const { user, isAuthenticated, isLoading } = useAuth0();
-  const [username, setUsername] = useState(user?.name || '');
-  const [email, setEmail] = useState(user?.email || '');
+  const { user, loading } = useContext();
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [bio, setBio] = useState(user?.bio || '');
+  const [bio, setBio] = useState('');
 
-  if (isLoading) {
+  useEffect(() => {
+    if (user) {
+      setUsername(user.username || '');
+      setEmail(user.email || '');
+      setBio(user.bio || '');
+    }
+  }, [user]);
+
+  const handleUpdateProfile = async (e) => {
+    e.preventDefault();
+    console.log("Profile updated:", { username, email, bio, password });
+    try {
+      await axios.put(`/api/users/${user.id}`, {
+        picture: user.picture,
+        username: username,
+        email: email,
+        bio: bio,
+        password: password,
+      });
+      console.log('User updated successfully');
+    } catch (error) {
+      console.error('Error updating user:', error);
+    }
+  };
+
+  if (loading) {
     return <div>Loading ...</div>;
   }
 
-  const handleUpdateProfile = (e) => {
-    e.preventDefault();
-    // Handle profile update logic here
-    console.log("Profile updated:", { username, email, password, bio });
-  };
-
   return (
-    isAuthenticated && (
+    user && (
       <div className="form-container bg-dark">
         <form onSubmit={handleUpdateProfile}>
           <div className="profile-image-container">
