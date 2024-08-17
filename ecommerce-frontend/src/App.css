@@ -290,6 +290,11 @@ footer p {
 }
 
 
+/* Sign-In page styles */
+.form-control::placeholder {
+  color: white;
+}
+
 /* Profile.css */
 .form-container {
   display: flex;
