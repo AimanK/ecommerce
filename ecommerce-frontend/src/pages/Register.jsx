@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-import { useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function Register() {
   let navigate = useNavigate();
 
   const [user, setUser] = useState({
-        email: "",
-        password: "",
+    username: "", // Added username field
+    email: "",
+    password: "",
+    password_confirmation: ""
   });
 
-  const { email, password } = user;
+  const { username, email, password, password_confirmation } = user;
 
   const onInputChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -18,15 +20,26 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:8080/register', user);
-      console.log(user);
-      navigate('/'); // Redirect to profile page after successful registration
-    };
+    try {
+      await axios.post('http://localhost:3001/api/v1/users', {
+        user: {
+          username,
+          email,
+          password,
+          password_confirmation
+        }
+      });
+      navigate('/'); // Redirect to home page or profile page after successful registration
+    } catch (error) {
+      console.error("There was an error registering the user!", error);
+      // Handle errors here, e.g., show an error message
+    }
+  };
 
   const handleBack = () => {
     navigate('/'); // Navigate back to the root
   };
-  
+
   return (
     <body className="bg-dark d-flex align-items-center justify-content-center min-vh-100">
       <main className="form-signin w-100 m-auto" style={{ maxWidth: '400px' }}>
@@ -34,14 +47,48 @@ function Register() {
           <img className="mb-4" src="http://www.w3.org/2000/svg" alt="" width="72" height="57" />
           <h1 className="h3 mb-3 fw-normal text-white">Register</h1>
           <div className="m-3">
-            <input type="email" className="form-control bg-secondary text-white" placeholder="Email address" name="email" value={email} onChange={(e) => onInputChange(e)} />
+            <input
+              type="text"
+              className="form-control bg-secondary text-white"
+              placeholder="Username"
+              name="username"
+              value={username}
+              onChange={(e) => onInputChange(e)}
+            />
           </div>
           <div className="m-3">
-            <input type="password" className="form-control bg-secondary text-white" placeholder="Password" name="password" value={password} onChange={e => onInputChange(e)} />
+            <input
+              type="email"
+              className="form-control bg-secondary text-white"
+              placeholder="Email address"
+              name="email"
+              value={email}
+              onChange={(e) => onInputChange(e)}
+            />
+          </div>
+          <div className="m-3">
+            <input
+              type="password"
+              className="form-control bg-secondary text-white"
+              placeholder="Password"
+              name="password"
+              value={password}
+              onChange={(e) => onInputChange(e)}
+            />
+          </div>
+          <div className="m-3">
+            <input
+              type="password"
+              className="form-control bg-secondary text-white"
+              placeholder="Confirm Password"
+              name="password_confirmation"
+              value={password_confirmation}
+              onChange={(e) => onInputChange(e)}
+            />
           </div>
           <div className="form-check text-start my-3">
             <input className="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault" />
-            <label className="form-check-label text-white" for="flexCheckDefault">
+            <label className="form-check-label text-white" htmlFor="flexCheckDefault">
               Remember me
             </label>
           </div>
@@ -54,7 +101,6 @@ function Register() {
       </main>
     </body>
   );
-  }
-
+}
 
 export default Register;
