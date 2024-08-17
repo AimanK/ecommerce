@@ -9,17 +9,18 @@ function SignIn() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      const response = await axios.get(`/user?email=${encodeURIComponent(email)}`);
-      console.log('User data retrieved:', response.data);
-      navigate('/profile'); // Redirect to profile page after successful retrieval
+      const response = await axios.get(`http://localhost:8080/customers?email=${encodeURIComponent(email)}`);
+      console.log(response.data);
+      navigate('/'); // Redirect to profile page after successful sign in
     } catch (error) {
-      console.error('Error retrieving user data:', error);
+      console.error('Error fetching data:', error);
     }
-  };
+    };
 
   const handleRegister = () => {
-    navigate('/newcustomer'); // Navigate to the register component
+    navigate('/register'); // Navigate to the register component
   };
 
   const handleBack = () => {
@@ -38,10 +39,10 @@ function SignIn() {
           <img className="mb-4" src="http://www.w3.org/2000/svg" alt="" width="72" height="57" />
           <h1 className="h3 mb-3 fw-normal text-white">Sign In</h1>
           <div className="m-3">
-            <input type="email" className="form-control bg-secondary text-white" placeholder="Email address" onChange={e => setEmail(e.target.value)} />
+            <input type="email" className="form-control bg-secondary text-white" placeholder="Email address" name="email" value={email} onChange={e => setEmail(e.target.value)} />
           </div>
           <div className="m-3">
-            <input type="password" className="form-control bg-secondary text-white" placeholder="Password" onChange={e => setPassword(e.target.value)} />
+            <input type="password" className="form-control bg-secondary text-white" placeholder="Password" name="password" value={password} onChange={e => setPassword(e.target.value)} />
           </div>
           <div className="form-check text-start my-3">
             <input className="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault" />

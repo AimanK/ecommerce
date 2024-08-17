@@ -18,7 +18,8 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:8080/newcustomer', user);
+    await axios.post('http://localhost:8080/register', user);
+      console.log(user);
       navigate('/'); // Redirect to profile page after successful registration
     };
 

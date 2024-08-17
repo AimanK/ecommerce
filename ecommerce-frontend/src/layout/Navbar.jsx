@@ -52,7 +52,7 @@ export default function Navbar() {
           <Link className="py-2 d-none d-md-inline-block text-white" to="/aboutus">About Us</Link>
           <Link className="py-2 d-none d-md-inline-block text-white" to="/yourcart">Cart</Link>
           <Link className="py-2 d-none d-md-inline-block text-white" to="/sign-in">Sign-In</Link>
-          if (signedIn ? <Link className="py-2 d-none d-md-inline-block text-white" to="/profile"></Link>)
+          <Link className="py-2 d-none d-md-inline-block text-white" to="/profile"></Link>
         </div>
       </nav>
     </div>
