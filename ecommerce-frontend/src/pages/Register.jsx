@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useAuth } from '../contexts/AuthContext'; // Adjust the path if needed
 
 function Register() {
   let navigate = useNavigate();
+  const { signIn } = useAuth(); // Use the signIn method from AuthContext
 
   const [user, setUser] = useState({
-    username: "", // Added username field
+    username: "",
     email: "",
     password: "",
     password_confirmation: ""
@@ -29,6 +31,10 @@ function Register() {
           password_confirmation
         }
       });
+      
+      // Optionally, you could also handle authentication here if needed
+      signIn(); // Set the user as signed in
+
       navigate('/'); // Redirect to home page or profile page after successful registration
     } catch (error) {
       console.error("There was an error registering the user!", error);
@@ -43,7 +49,7 @@ function Register() {
   return (
     <body className="bg-dark d-flex align-items-center justify-content-center min-vh-100">
       <main className="form-signin w-100 m-auto" style={{ maxWidth: '400px' }}>
-        <form onSubmit={(e) => handleSubmit(e)} className="bg-secondary">
+        <form onSubmit={handleSubmit} className="bg-secondary">
           <img className="mb-4" src="http://www.w3.org/2000/svg" alt="" width="72" height="57" />
           <h1 className="h3 mb-3 fw-normal text-white">Register</h1>
           <div className="m-3">
@@ -53,7 +59,7 @@ function Register() {
               placeholder="Username"
               name="username"
               value={username}
-              onChange={(e) => onInputChange(e)}
+              onChange={onInputChange}
             />
           </div>
           <div className="m-3">
@@ -63,7 +69,7 @@ function Register() {
               placeholder="Email address"
               name="email"
               value={email}
-              onChange={(e) => onInputChange(e)}
+              onChange={onInputChange}
             />
           </div>
           <div className="m-3">
@@ -73,7 +79,7 @@ function Register() {
               placeholder="Password"
               name="password"
               value={password}
-              onChange={(e) => onInputChange(e)}
+              onChange={onInputChange}
             />
           </div>
           <div className="m-3">
@@ -83,7 +89,7 @@ function Register() {
               placeholder="Confirm Password"
               name="password_confirmation"
               value={password_confirmation}
-              onChange={(e) => onInputChange(e)}
+              onChange={onInputChange}
             />
           </div>
           <div className="form-check text-start my-3">

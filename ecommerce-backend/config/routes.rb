@@ -16,7 +16,12 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :products, only: [:index, :show, :create, :update, :destroy]
       # Add other resources as needed
-      resources :users, only: [:create, :update, :show, :destroy]
+      resources :users, only: [:create, :show, :update, :destroy] do
+        collection do
+          post 'sign_in', to: 'sessions#create'
+          delete 'sign_out', to: 'sessions#destroy'
+        end
+      end
     end
   end
 

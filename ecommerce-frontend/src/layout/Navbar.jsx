@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext'; // Import useAuth
+import { useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  let navigate = useNavigate();
+  const { isSignedIn, signOut } = useAuth(); // Get isSignedIn and logOut from context
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -11,6 +15,12 @@ export default function Navbar() {
   const handleLinkClick = () => {
     setIsOpen(false);
   };
+
+
+  const handleSignOut = () => {
+    signOut();
+    navigate('/');
+  }
 
   return (
     <div>
@@ -51,8 +61,24 @@ export default function Navbar() {
           </label>
           <Link className="py-2 d-none d-md-inline-block text-white" to="/aboutus">About Us</Link>
           <Link className="py-2 d-none d-md-inline-block text-white" to="/yourcart">Cart</Link>
-          <Link className="py-2 d-none d-md-inline-block text-white" to="/sign-in">Sign-In</Link>
-          <Link className="py-2 d-none d-md-inline-block text-white" to="/profile"></Link>
+          {isSignedIn ? (
+            <>
+            <Link className="py-2 d-none d-md-inline-block text-white" to="/profile">Profile</Link>
+            <button 
+              className="py-2 d-none d-md-inline-block"
+              style={{
+                color: 'white',
+                background: 'none',
+                border: 'none',
+                padding: '0.5rem 1rem',
+                textDecoration: 'none',
+              }}
+              onClick={handleSignOut}>Sign Out
+              </button>
+              </>
+          ) : (
+            <Link className="py-2 d-none d-md-inline-block text-white" to="/sign-in">Sign-In</Link>
+          )}
         </div>
       </nav>
     </div>
